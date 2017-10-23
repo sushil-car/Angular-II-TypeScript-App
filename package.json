@@ -10,6 +10,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:sushiladokar/Angular-II-TypeScript.git"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.2.4",
