@@ -1,23 +1,41 @@
-<div style="text-align:center">
-  <h1>
-    RETRIEVE YOUR BOOKING
-  </h1>
+<div class="klm-header">
+  <a class="navbar-brand" href="javascript:void(0);">CHECK-IN</a>
 </div>
 
-<form [formGroup]="myForm" novalidate (ngSubmit)="getBookingStatus(myForm.value, myForm.valid)">
-  <div>
-    <label>Booking Code</label>
-    <input type="text" formControlName="bookingCode">
-    <small [hidden]="myForm.controls.bookingCode.valid || myForm.controls.bookingCode.pristine">
-          Booking code is required (minimum 5 characters, maximum 6 characters).
-    </small>
-    <br/>
-    <label>Family Name</label>
-    <input type="text" formControlName="familyName">
-    <small [hidden]="myForm.controls.familyName.valid || myForm.controls.familyName.pristine">
-          Family Name is required (minimum 2 characters, maximum 30 characters).
-    </small>
+<main role="main" class="main-container">
+  <div class="container">
+    <div class="login-section">
+      <div class="heading">
+        RETRIEVE YOUR BOOKING
+      </div>
+      <div class="content">
+        You can find your booking by filling out your family name and the booking code in your booking confirmation.
+      </div>
+      <div>
+        <form [formGroup]="myForm" novalidate (ngSubmit)="getBookingStatus(myForm.value, myForm.valid)">
 
+          <div class="container">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+              <label>Booking Code</label>
+              <input type="text" formControlName="bookingCode">
+              <small [hidden]="myForm.controls.bookingCode.valid || myForm.controls.bookingCode.pristine">
+                Booking code is required (minimum 5 characters, maximum 6 characters).
+              </small>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+              <label>Family Name</label>
+              <input type="text" formControlName="familyName">
+              <small [hidden]="myForm.controls.familyName.valid || myForm.controls.familyName.pristine">
+                Family Name is required (minimum 2 characters, maximum 30 characters).
+              </small>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+              <!-- [disabled]="!myForm.controls.bookingCode.valid || !myForm.controls.familyName.valid" -->
+              <button type="submit" class="btn btn-outline-success" >Retrieve</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <button type="submit" [disabled]="!myForm.controls.bookingCode.valid || !myForm.controls.familyName.valid">Retrieve booking</button>
-</form>
+</main>

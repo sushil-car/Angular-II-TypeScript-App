@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
-import {BookingDataService} from '../service/booking-data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [BookingDataService]
+  providers: []
 })
 
 export class LoginComponent {
@@ -16,7 +16,7 @@ export class LoginComponent {
   title = 'app';
 
   //  constructor(private _fb: FormBuilder) { }
-  constructor(private bookingDataService: BookingDataService) {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -32,10 +32,7 @@ export class LoginComponent {
 
   getBookingStatus(model : {}) {
     this.submitted = true;
-    var t = this.bookingDataService.getData().subscribe((data) => {
-      console.log("what is in the data ", data);
-      // this.myjsondata = data;
-    });
+    this.router.navigate(['./home']);
     console.log(model);
   }
 

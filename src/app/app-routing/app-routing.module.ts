@@ -1,28 +1,33 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from '../login/login.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {LoginComponent} from '../login/login.component';
+import {HomeComponent} from '../home/home.component';
+import {PagenotfoundComponent} from '../pagenotfound/pagenotfound.component';
+import {SharePriceComponent} from '../share-price/share-price.component';
 
-const routes: Routes = [
+const routes : Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/home',
     pathMatch: 'full'
-  } , {
+  }, {
     path: 'login',
-    component: LoginComponent,
-  } , {
+    component: LoginComponent
+  }, {
+    path: 'home',
+    component: HomeComponent
+  }, {
+    path: 'shareprice',
+    component: SharePriceComponent
+  }, {
     path: '**',
-    component: LoginComponent,
+    component: PagenotfoundComponent
   }
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(routes)
-    ],
-    exports: [
-        RouterModule
-    ],
-    declarations: []
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  declarations: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

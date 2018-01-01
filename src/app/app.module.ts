@@ -5,11 +5,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { SharePriceComponent } from './share-price/share-price.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    HeaderComponent,
+    PagenotfoundComponent,
+    SharePriceComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, HttpModule, AppRoutingModule

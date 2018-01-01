@@ -8,9 +8,10 @@ export class BookingDataService {
   constructor(public http:Http) { }
 
   getData() {
-    return this.http.get("http://localhost:4200/assets/mock.json")
+    return this.http.get(" https://newsapi.org/v1/articles?source=google-news&sortBy=top&apiKey=5b03450c5fbd4e1293ce09ff90d3b274")
       .map((res) => {
-        return res.json();
+        var t = JSON.parse(res['_body']);
+        return t.articles;
       });
   }
 
