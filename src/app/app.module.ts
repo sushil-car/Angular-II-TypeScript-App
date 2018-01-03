@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SharePriceComponent } from './share-price/share-price.component';
+import { PriceQuantityViewComponent } from './price-quantity-view/price-quantity-view.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SharePriceComponent } from './share-price/share-price.component';
     HomeComponent,
     HeaderComponent,
     PagenotfoundComponent,
-    SharePriceComponent
+    SharePriceComponent,
+    PriceQuantityViewComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, HttpModule, AppRoutingModule
