@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SharePriceComponent } from './share-price/share-price.component';
 import { PriceQuantityViewComponent } from './price-quantity-view/price-quantity-view.component';
+import { RealEstateHomeComponent } from './real-estate/real-estate-home/real-estate-home.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import { PriceQuantityViewComponent } from './price-quantity-view/price-quantity
     HeaderComponent,
     PagenotfoundComponent,
     SharePriceComponent,
-    PriceQuantityViewComponent
+    PriceQuantityViewComponent,
+    RealEstateHomeComponent
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule, HttpModule, AppRoutingModule
+    BrowserModule, ReactiveFormsModule, HttpModule, AppRoutingModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

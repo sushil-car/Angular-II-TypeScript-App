@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-price-quantity-view',
@@ -6,14 +6,20 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./price-quantity-view.component.css']
 })
 export class PriceQuantityViewComponent implements OnInit {
-  test = 'welcome';
+  singleHolding = {price: 0, quantity: 0, id: 0};
   @Input() id: number;
+  @Output() sendCurrentAvgPrice: EventEmitter<any> = new EventEmitter<object>();
+  priceTextBox;
+  quantityTextBox;
 
   constructor() {
-    this.test = 'variable';
   }
 
   ngOnInit() {
   }
 
+  calculateCurrentAvgPrice () {
+    this.singleHolding = {'price': this.priceTextBox, 'quantity': this.quantityTextBox, 'id' : this.id};
+    this.sendCurrentAvgPrice.emit(this.singleHolding);
+  }
 }

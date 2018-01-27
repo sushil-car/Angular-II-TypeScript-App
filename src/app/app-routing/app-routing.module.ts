@@ -4,8 +4,9 @@ import {LoginComponent} from '../login/login.component';
 import {HomeComponent} from '../home/home.component';
 import {PagenotfoundComponent} from '../pagenotfound/pagenotfound.component';
 import {SharePriceComponent} from '../share-price/share-price.component';
+import {RealEstateHomeComponent} from '../real-estate/real-estate-home/real-estate-home.component';
 
-const routes : Routes = [
+const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
@@ -19,6 +20,9 @@ const routes : Routes = [
   }, {
     path: 'shareprice',
     component: SharePriceComponent
+  }, {
+    path: 'realestate/home',
+    component: RealEstateHomeComponent
   }, {
     path: '**',
     component: PagenotfoundComponent

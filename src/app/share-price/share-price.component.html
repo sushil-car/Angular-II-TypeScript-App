@@ -2,18 +2,31 @@
 
 <main>
   <div class="container-fluid">
+    <span class="jumbotron-icon">
+      <i class="fa fa-plus fa-2" (click)="increment()"></i>
+    </span>
+    <div *ngFor="let a of fakeArray; let index = index">
+      <app-price-quantity-view [id]="index" (sendCurrentAvgPrice)='onNotify($event)'></app-price-quantity-view>
+    </div>
 
-      <div *ngFor="let a of fakeArray; let index = index">
-          <app-price-quantity-view [id] = "index"></app-price-quantity-view>
-      </div>
+    <div *ngIf="averagePrice" class="margin-t-ten">
+      <h5>Your average buying price: &#8377; {{averagePrice}}</h5>
+    </div>
 
+    <div *ngIf="totalHolding" class="margin-t-ten">
+      <h5>Your total holdings:  {{totalHolding}}</h5>
+    </div>
 
-    <div class="row mt-3">
+    <div *ngIf="holdingPrice" class="margin-t-ten">
+      <h5>Your total holding amount: &#8377; {{holdingPrice}}</h5>
+    </div>
+
+    <!-- <div class="row mt-3">
       <span class="glyphicon glyphicon-plus"></span>
       <div class="col-lg-6">
-        <button type="button" class="btn btn-warning" (click)="increment()">Average</button>
+        <button type="button" class="btn btn-warning" (click)="calcAverage()">Average</button>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </main>

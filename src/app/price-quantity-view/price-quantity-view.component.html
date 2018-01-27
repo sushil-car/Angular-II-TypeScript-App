@@ -2,13 +2,13 @@
   <div class="col-lg-3">
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">Buy Quantiy</span>
-      <input type="number" step="any" min="0" class="form-control" placeholder="quantity" aria-label="Username" aria-describedby="basic-addon1">
+      <input type="number" [value] = "quantityTextBox" (input)="quantityTextBox = $event.target.value" (keyup) ="calculateCurrentAvgPrice()" (change) ="calculateCurrentAvgPrice()" step="any" min="0" class="form-control" placeholder="quantity" aria-label="Username" aria-describedby="basic-addon1">
     </div>
   </div>
   <div class="col-lg-3">
     <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">Buy Price{{priceTextBox}}</span>
-      <input type="number" step="any" [value] = "priceTextBox" (input)="priceTextBox = $event.target.value" min="0" class="form-control" placeholder="price" aria-label="Username" aria-describedby="basic-addon1">
+      <span class="input-group-addon" id="basic-addon1">Buy Price</span>
+      <input type="number" step="any" [value] = "priceTextBox" (input)="priceTextBox = $event.target.value" (keyup) ="calculateCurrentAvgPrice()" (change) ="calculateCurrentAvgPrice()" min="0" class="form-control" placeholder="price" aria-label="Username" aria-describedby="basic-addon1">
     </div>
   </div>
 </div>

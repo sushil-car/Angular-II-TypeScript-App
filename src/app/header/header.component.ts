@@ -7,7 +7,7 @@ import {FormGroup} from '@angular/forms';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  public searchForm : FormGroup;
+  public searchForm: FormGroup;
 
   constructor() { }
 
